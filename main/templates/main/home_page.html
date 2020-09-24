@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+
+
+{% block title %}
+{% endblock %}
+
+
+{% block content %}
+    <h1 class="alert-danger">Vlad pidaras</h1>
+    <form action="{% url 'handling' %}" method="post" enctype="multipart/form-data" target="_blank">
+        {% csrf_token %}
+        <input type="hidden" name="MAX_FILE_SIZE" value="1000" accept=".doc,.docx,application/msword">
+        Send this file: <input name="userfile" type="file">
+        <input type="submit" value="Send file" id="Send">
+    </form>
+{% endblock %}
